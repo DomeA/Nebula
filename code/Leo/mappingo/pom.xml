@@ -21,6 +21,7 @@
         <module>servers/micro-service/spatial-data</module>
         <module>servers/micro-service/gis-process</module>
         <module>servers/micro-service/mappingo-api</module>
+        <module>servers/util/mp-dto</module>
     </modules>
     <dependencyManagement>
         <dependencies>
