@@ -13,6 +13,7 @@ spring:
       discovery:
         service-id: configServer
         enabled: true
+      enabled: true
 
 #将不同的配置组以---分割，并通过spring.profiles定义每组的名字，方便后续引用
 ---

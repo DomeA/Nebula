@@ -30,7 +30,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>monitorServer</finalName>
+        <finalName>monitor-server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
