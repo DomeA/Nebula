@@ -26,3 +26,5 @@ code/Leo/mappingo/servers/cloud-tool/monitor-server/target/
 code/Leo/mappingo/servers/cloud-tool/discovery-server/target/
 
 code/Leo/mappingo/servers/cloud-tool/config-server/target/
+
+code/Leo/mappingo/servers/util/mp-dto/target/
