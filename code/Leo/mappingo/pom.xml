@@ -30,6 +30,7 @@
         <module>servers/micro-service/simulation</module>
         <module>servers/micro-service/mongodb</module>
         <module>servers/micro-service/workflow</module>
+        <module>servers/util/mp-utility</module>
     </modules>
     <dependencyManagement>
         <dependencies>
