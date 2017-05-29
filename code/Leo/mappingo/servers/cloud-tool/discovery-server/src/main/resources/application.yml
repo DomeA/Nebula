@@ -1,9 +1,46 @@
-#spring:
-#  cloud:
-#    #git服务配置信息
-#    config:
-#      server:
-#        git:
-#          uri: https://github.com/DomeA/Nebula.git
-#          #从以下文件夹下下面查找配置文件
-#          search-paths: /repo/dev*,/repo/test*,/repo/prod*
+server:
+  port: 8002
+spring:
+  application:
+    name: discoveryServer
+  profiles:
+    #选择使用下面哪个配置项
+    active: devProfile
+   #服务配置信息
+  cloud:
+    config:
+      #此处的config.profile会根据生效的active设置对应的值
+      profile: ${config.profile}
+      name: application
+      uri: http://localhost:8888
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    hostname: localhost
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
+#将不同的配置组以---分割，并通过spring.profiles定义每组的名字，方便后续引用
+---
+spring:
+  profiles: testProfile
+config:
+  profile: test
+
+---
+spring:
+  profiles: devProfile
+config:
+  profile: dev
+
+---
+spring:
+  profiles: prodProfile
+config:
+  profile: prod
