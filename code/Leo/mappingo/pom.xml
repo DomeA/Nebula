@@ -23,6 +23,13 @@
         <module>servers/micro-service/mappingo-api</module>
         <module>servers/util/mp-dto</module>
         <module>servers/util/mp-file</module>
+        <module>servers/util/mp-mail</module>
+        <module>servers/util/mp-encryption</module>
+        <module>servers/micro-service/authentication</module>
+        <module>servers/micro-service/gps</module>
+        <module>servers/micro-service/simulation</module>
+        <module>servers/micro-service/mongodb</module>
+        <module>servers/micro-service/workflow</module>
     </modules>
     <dependencyManagement>
         <dependencies>
