@@ -16,6 +16,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>servers/cloud-tool/config-server</module>
+        <module>servers/cloud-tool/discovery-server</module>
     </modules>
     <dependencyManagement>
         <dependencies>
