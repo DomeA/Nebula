@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8001
 spring:
   application:
     name: discoveryServer
@@ -14,6 +14,9 @@ spring:
       name: application
       uri: http://localhost:8888
       label: master
+      discovery:
+        service-id: configServer
+        enabled: true
 eureka:
   client:
     service-url:
@@ -23,9 +26,24 @@ eureka:
   instance:
     hostname: localhost
     metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      instanceId: ${spring.application.name}:${random.value}
+#    data-center-info:
+#    environment:
+    status-page-url-path: /info
+  server:
+    # 设为false，关闭自我保护
+    enable-self-preservation: false
+    # 清理间隔（单位毫秒，默认是60*1000）
+    eviction-interval-timer-in-ms: 10000
 
 
+#info.build.name=@project.name@
+#info.build.description=@project.description@
+#info.build.groupId=@project.groupId@
+#info.build.artifact=@project.artifactId@
+#info.build.version=@project.version@
+management:
+  context-path: /admin
 #将不同的配置组以---分割，并通过spring.profiles定义每组的名字，方便后续引用
 ---
 spring:
