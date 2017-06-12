@@ -1,7 +1,6 @@
 package com.domeastudio.mappingo.server.microservice.gisprocess.core;
 
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.ParseException;
 import org.geotools.geometry.jts.JTS;
 import org.geotools.referencing.CRS;
 import org.opengis.referencing.FactoryException;

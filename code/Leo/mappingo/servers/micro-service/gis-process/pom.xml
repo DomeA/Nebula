@@ -57,22 +57,22 @@
             <artifactId>gt-gtopo30</artifactId>
             <version>${geotools.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.geotools</groupId>
-            <artifactId>gt-jp2k</artifactId>
-            <version>${geotools.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.geotools</groupId>
-            <artifactId>gt-netcdf</artifactId>
-            <version>${geotools.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>log4j-over-slf4j</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.geotools</groupId>-->
+            <!--<artifactId>gt-jp2k</artifactId>-->
+            <!--<version>${geotools.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.geotools</groupId>-->
+            <!--<artifactId>gt-netcdf</artifactId>-->
+            <!--<version>${geotools.version}</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                    <!--<artifactId>log4j-over-slf4j</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-image</artifactId>
@@ -203,21 +203,21 @@
             <artifactId>gt-jdbc</artifactId>
             <version>${geotools.version}</version>
         </dependency>
-        <dependency>
-        <groupId>org.geotools</groupId>
-        <artifactId>gt-postgis</artifactId>
-        <version>${geotools.version}</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.geotools</groupId>-->
+        <!--<artifactId>gt-postgis</artifactId>-->
+        <!--<version>${geotools.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.geotools.jdbc</groupId>
             <artifactId>gt-jdbc-postgis</artifactId>
             <version>${geotools.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.geotools.jdbc</groupId>
-            <artifactId>gt-jdbc-h2</artifactId>
-            <version>${geotools.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.geotools.jdbc</groupId>-->
+            <!--<artifactId>gt-jdbc-h2</artifactId>-->
+            <!--<version>${geotools.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.geotools.jdbc</groupId>
             <artifactId>gt-jdbc-oracle</artifactId>
@@ -243,11 +243,11 @@
             <artifactId>gt-imagemosaic-jdbc</artifactId>
             <version>${geotools.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.geotools</groupId>
-            <artifactId>gt-wfs</artifactId>
-            <version>${geotools.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.geotools</groupId>-->
+            <!--<artifactId>gt-wfs</artifactId>-->
+            <!--<version>${geotools.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-wfs-ng</artifactId>
@@ -258,11 +258,11 @@
             <artifactId>gt-wms</artifactId>
             <version>${geotools.version}</version>
         </dependency>
-        <dependency>
-        <groupId>org.geotools</groupId>
-        <artifactId>gt-postgis-versioned</artifactId>
-        <version>${geotools.version}</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.geotools</groupId>-->
+        <!--<artifactId>gt-postgis-versioned</artifactId>-->
+        <!--<version>${geotools.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-metadata</artifactId>
