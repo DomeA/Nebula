@@ -28,3 +28,9 @@ code/Leo/mappingo/servers/cloud-tool/discovery-server/target/
 code/Leo/mappingo/servers/cloud-tool/config-server/target/
 
 code/Leo/mappingo/servers/util/mp-dto/target/
+
+code/Leo/mappingo/website/portal/src/main/webapp/node_modules/
+
+code/Leo/mappingo/website/portal/src/main/webapp/bower_components/
+
+code/Leo/mappingo/website/portal/src/main/webapp/\.idea/
