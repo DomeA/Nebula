@@ -9,7 +9,8 @@ define({
         "jquery": './libs/jquery/jquery',
         "bootstrap": './libs/bootstrap/bootstrap',
         'domReady': './libs/domReady/domReady',
-        'vue':'./libs/vue/dist/vue'
+        'vue':'./libs/vue/dist/vue',
+        'vue-router':'./libs/vue-router/vue-router'
     },
     map: {
         '*': {
@@ -23,6 +24,11 @@ define({
                 'jquery',
                 'css!./libs/bootstrap/bootstrap',
                 'css!./libs/bootstrap/bootstrap-theme'
+            ]
+        },
+        'vue-router':{
+            deps:[
+                'vue'
             ]
         }
     }
