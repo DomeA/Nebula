@@ -36,6 +36,7 @@
         <module>servers/micro-service/postgresql</module>
         <module>servers/micro-service/redis</module>
         <module>servers/micro-service/p2p</module>
+        <module>servers/micro-service/spatial-pdm</module>
     </modules>
     <dependencyManagement>
         <dependencies>
