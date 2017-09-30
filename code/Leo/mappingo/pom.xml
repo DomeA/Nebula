@@ -37,6 +37,7 @@
         <module>servers/micro-service/redis</module>
         <module>servers/micro-service/p2p</module>
         <module>servers/micro-service/spatial-pdm</module>
+        <module>servers/micro-service/tasks</module>
     </modules>
     <dependencyManagement>
         <dependencies>
