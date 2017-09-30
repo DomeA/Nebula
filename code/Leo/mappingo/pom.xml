@@ -35,6 +35,7 @@
         <module>servers/micro-service/h2</module>
         <module>servers/micro-service/postgresql</module>
         <module>servers/micro-service/redis</module>
+        <module>servers/micro-service/p2p</module>
     </modules>
     <dependencyManagement>
         <dependencies>
