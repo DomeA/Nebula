@@ -24,6 +24,7 @@ spring:
     username: sa
     password: sa
     driver-class-name: org.h2.Driver
+springfox.documentation.swagger.v2.path: /api-docs
 #将不同的配置组以---分割，并通过spring.profiles定义每组的名字，方便后续引用
 ---
 spring:

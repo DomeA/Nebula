@@ -20,11 +20,7 @@ public final class VoronoiArithmeticHelper {
     List<Coordinate> coords = new ArrayList<Coordinate>();
     Envelope clipEnvelpoe = new Envelope();
     Random random = new Random(100);
-    for(
-    int i = 0;
-    i<100;i++)
-
-    {
+    for(int i = 0;i<100;i++){
         //使用过程中一把每个坐标需要配置一个属性数据，但是这个coord没法附带一个属性，
         //否则剖分之后不知道多边形对应的点位
         //可以使用coordinate的z值，作为一个唯一标志位

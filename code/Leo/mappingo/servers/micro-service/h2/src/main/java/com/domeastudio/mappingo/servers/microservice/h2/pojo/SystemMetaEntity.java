@@ -59,6 +59,7 @@ public class SystemMetaEntity implements Serializable {
     public void setFieldType(FieldTypeEnum fieldType) {
         this.fieldType = fieldType;
     }
+
     @Basic
     @Column(name = "ReferenceTable")
     public String getReferenceTable() {
@@ -68,6 +69,7 @@ public class SystemMetaEntity implements Serializable {
     public void setReferenceTable(String referenceTable) {
         this.referenceTable = referenceTable;
     }
+
     @Basic
     @Column(name = "ForeignKe")
     public String getForeignKey() {
@@ -77,6 +79,7 @@ public class SystemMetaEntity implements Serializable {
     public void setForeignKey(String foreignKey) {
         this.foreignKey = foreignKey;
     }
+
     @Basic
     @Column(name = "ForeignKeyType")
     public FieldTypeEnum getForeignKeyType() {
