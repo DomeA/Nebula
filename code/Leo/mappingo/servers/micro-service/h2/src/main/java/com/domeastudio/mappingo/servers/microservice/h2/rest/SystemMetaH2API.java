@@ -35,7 +35,7 @@ public class SystemMetaH2API {
         }
         return message2Client;
     }
-    @ApiOperation(value="获取一个系统元数据记录", notes="根据id获取元数据记录")
+    @ApiOperation(value="获取一个系统元数据记录", notes="根据id获取元数据记录",httpMethod = "GET")
     @ApiImplicitParam(name = "id", value = "元数据的UUID", required = true, dataType = "String")
     @ApiResponse(code = 200,message = "系统元数据JSONObject",response = Message2Client.class)
     @RequestMapping(value = "/meta/get/{id}", method = RequestMethod.GET,
@@ -104,7 +104,6 @@ public class SystemMetaH2API {
             message2Client.setMessage(ErrorCode.dataBaseDeleteFaile.getValue());
             e.printStackTrace();
         }
-
         return message2Client;
     }
 
@@ -121,7 +120,6 @@ public class SystemMetaH2API {
             message2Client.setMessage(ErrorCode.dataBaseDeleteFaile.getValue());
             e.printStackTrace();
         }
-
         return message2Client;
     }
 }
