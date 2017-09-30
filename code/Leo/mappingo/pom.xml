@@ -38,6 +38,8 @@
         <module>servers/micro-service/p2p</module>
         <module>servers/micro-service/spatial-pdm</module>
         <module>servers/micro-service/tasks</module>
+        <module>servers/micro-service/image-process</module>
+        <module>servers/micro-service/hadoop</module>
     </modules>
     <dependencyManagement>
         <dependencies>
