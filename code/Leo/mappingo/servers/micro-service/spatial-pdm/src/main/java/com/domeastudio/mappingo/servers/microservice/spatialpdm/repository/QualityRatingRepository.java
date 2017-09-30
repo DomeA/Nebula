@@ -4,5 +4,5 @@ package com.domeastudio.mappingo.servers.microservice.spatialpdm.repository;
 import com.domeastudio.mappingo.servers.microservice.spatialpdm.pojo.system.QualityRatingEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface QualityRatingRepository extends CrudRepository<QualityRatingEntity,String> {
+public interface QualityRatingRepository extends CrudRepository<QualityRatingEntity, String> {
 }

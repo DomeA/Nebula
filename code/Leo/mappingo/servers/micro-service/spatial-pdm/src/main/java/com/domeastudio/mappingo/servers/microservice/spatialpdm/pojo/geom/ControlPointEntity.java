@@ -18,7 +18,7 @@ public class ControlPointEntity {
 
     private Long fid;
     private String eventID;
-    @Type(type="org.hibernate.spatial.GeometryType")
+    @Type(type = "org.hibernate.spatial.GeometryType")
     private Point point;
     private Date effectiveFromDate;
     private Date effectiveToDate;
@@ -41,14 +41,14 @@ public class ControlPointEntity {
     private CoodiPrecisionEntity coodiPrecisionEntityById;
     private DataSourceEntity dataSourceEntityById;
 
-    public ControlPointEntity(){
-       this.setEventId(UUID.randomUUID().toString().replace("-",""));
+    public ControlPointEntity() {
+        this.setEventId(UUID.randomUUID().toString().replace("-", ""));
     }
 
     @Id
     @GeneratedValue(generator = "incrementid")
     @GenericGenerator(name = "incrementid", strategy = "increment")
-    @Column(name="fid")
+    @Column(name = "fid")
     public Long getFid() {
         return fid;
     }
@@ -58,7 +58,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="event_id")
+    @Column(name = "event_id")
     public String getEventId() {
         return eventID;
     }
@@ -68,7 +68,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="the_geom")
+    @Column(name = "the_geom")
     public Point getPoint() {
         return point;
     }
@@ -78,7 +78,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="effective_from_date")
+    @Column(name = "effective_from_date")
     public Date getEffectiveFromDate() {
         return effectiveFromDate;
     }
@@ -88,7 +88,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="effective_to_date")
+    @Column(name = "effective_to_date")
     public Date getEffectiveToDate() {
         return effectiveToDate;
     }
@@ -98,7 +98,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="group_event_id")
+    @Column(name = "group_event_id")
     public String getGroupEventID() {
         return groupEventID;
     }
@@ -108,7 +108,7 @@ public class ControlPointEntity {
     }
 
     @OneToOne
-    @JoinColumn(name="operational_status_id",referencedColumnName = "id")
+    @JoinColumn(name = "operational_status_id", referencedColumnName = "id")
     public OperationalStatusEntity getOperationalStatusEntityById() {
         return operationalStatusEntityById;
     }
@@ -118,7 +118,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="origin_event_id")
+    @Column(name = "origin_event_id")
     public String getOriginEventID() {
         return originEventID;
     }
@@ -128,7 +128,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="remarks")
+    @Column(name = "remarks")
     public String getRemarks() {
         return remarks;
     }
@@ -138,7 +138,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="process_flag")
+    @Column(name = "process_flag")
     public String getProcessFlag() {
         return processFlag;
     }
@@ -148,7 +148,7 @@ public class ControlPointEntity {
     }
 
     @OneToOne
-    @JoinColumn(name="data_resolution_id",referencedColumnName = "id")
+    @JoinColumn(name = "data_resolution_id", referencedColumnName = "id")
     public DataResolutionEntity getDataResolutionEntityById() {
         return dataResolutionEntityById;
     }
@@ -158,7 +158,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="sub_type")
+    @Column(name = "sub_type")
     public Integer getSubType() {
         return subType;
     }
@@ -168,7 +168,7 @@ public class ControlPointEntity {
     }
 
     @OneToOne
-    @JoinColumn(name="control_point_type_id",referencedColumnName = "id")
+    @JoinColumn(name = "control_point_type_id", referencedColumnName = "id")
     public ControlPointTypeEntity getControlPointTypeEntityById() {
         return controlPointTypeEntityById;
     }
@@ -178,7 +178,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="post_number")
+    @Column(name = "post_number")
     public String getPostNumber() {
         return postNumber;
     }
@@ -188,7 +188,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="station")
+    @Column(name = "station")
     public Double getStation() {
         return station;
     }
@@ -198,7 +198,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="station_series_event_id")
+    @Column(name = "station_series_event_id")
     public String getStationSeriesEventID() {
         return stationSeriesEventID;
     }
@@ -208,7 +208,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="symbol_rotation")
+    @Column(name = "symbol_rotation")
     public Double getSymbolRotation() {
         return symbolRotation;
     }
@@ -218,7 +218,7 @@ public class ControlPointEntity {
     }
 
     @OneToOne
-    @JoinColumn(name="verified_ind_id",referencedColumnName = "id")
+    @JoinColumn(name = "verified_ind_id", referencedColumnName = "id")
     public YesNoEntity getVerifiedIndById() {
         return verifiedIndById;
     }
@@ -228,7 +228,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="x")
+    @Column(name = "x")
     public Double getX() {
         return x;
     }
@@ -238,7 +238,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="y")
+    @Column(name = "y")
     public Double getY() {
         return y;
     }
@@ -248,7 +248,7 @@ public class ControlPointEntity {
     }
 
     @Basic
-    @Column(name="z")
+    @Column(name = "z")
     public Double getZ() {
         return z;
     }
@@ -258,7 +258,7 @@ public class ControlPointEntity {
     }
 
     @OneToOne
-    @JoinColumn(name="coordi_precision_id",referencedColumnName = "id")
+    @JoinColumn(name = "coordi_precision_id", referencedColumnName = "id")
     public CoodiPrecisionEntity getCoodiPrecisionEntityById() {
         return coodiPrecisionEntityById;
     }
@@ -268,7 +268,7 @@ public class ControlPointEntity {
     }
 
     @OneToOne
-    @JoinColumn(name="data_source_id",referencedColumnName = "id")
+    @JoinColumn(name = "data_source_id", referencedColumnName = "id")
     public DataSourceEntity getDataSourceEntityById() {
         return dataSourceEntityById;
     }

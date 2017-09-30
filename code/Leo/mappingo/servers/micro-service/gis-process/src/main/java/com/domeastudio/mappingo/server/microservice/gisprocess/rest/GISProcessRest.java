@@ -15,8 +15,9 @@ public class GISProcessRest {
             method = RequestMethod.POST,
             produces = MediaType.TEXT_PLAIN_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody String geo2WKT(@RequestBody Geometry geometry){
-        String wkt=Geometry2WKT.getInstance().getWKT(geometry);
+    public @ResponseBody
+    String geo2WKT(@RequestBody Geometry geometry) {
+        String wkt = Geometry2WKT.getInstance().getWKT(geometry);
         return wkt;
     }
 }

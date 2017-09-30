@@ -14,7 +14,7 @@ public class MongodbApplication {
         SpringApplication.run(MongodbApplication.class, args);
     }
 
-    private static void startMongosServer(){
+    private static void startMongosServer() {
 
     }
 }

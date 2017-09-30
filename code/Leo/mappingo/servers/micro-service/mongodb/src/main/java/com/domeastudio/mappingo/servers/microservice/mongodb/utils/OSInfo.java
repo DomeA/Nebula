@@ -30,107 +30,135 @@ package com.domeastudio.mappingo.servers.microservice.mongodb.utils;
 //        user.dir	用户的当前工作目录
 
 public class OSInfo {
-    public static String getJavaVersion(){
+    public static String getJavaVersion() {
         return System.getProperty("java.version");
     }
-    public static String getJavaVendor(){
+
+    public static String getJavaVendor() {
         return System.getProperty("java.vendor");
     }
-    public static String getJavaVendorUrl(){
+
+    public static String getJavaVendorUrl() {
         return System.getProperty("java.vendor.url");
     }
-    public static String getJavaHome(){
+
+    public static String getJavaHome() {
         return System.getProperty("java.home");
     }
-    public static String getJavaVmSpecificationVersion(){
+
+    public static String getJavaVmSpecificationVersion() {
         return System.getProperty("java.vm.specification.version");
     }
-    public static String getJavaVmSpecificationVendor(){
+
+    public static String getJavaVmSpecificationVendor() {
         return System.getProperty("java.vm.specification.vendor");
     }
-    public static String getJavaVmSpecificationName(){
+
+    public static String getJavaVmSpecificationName() {
         return System.getProperty("java.vm.specification.name");
     }
-    public static String getJavaVmVersion(){
+
+    public static String getJavaVmVersion() {
         return System.getProperty("java.vm.version");
     }
-    public static String getJavaVmVendor(){
+
+    public static String getJavaVmVendor() {
         return System.getProperty("java.vm.vendor");
     }
-    public static String getJavaVmName(){
+
+    public static String getJavaVmName() {
         return System.getProperty("java.vm.name");
     }
-    public static String getJavaSpecificationVersion(){
+
+    public static String getJavaSpecificationVersion() {
         return System.getProperty("java.specification.version");
     }
-    public static String getJavaSpecificationVendor(){
+
+    public static String getJavaSpecificationVendor() {
         return System.getProperty("java.specification.vendor");
     }
-    public static String getJavaSpecificationName(){
+
+    public static String getJavaSpecificationName() {
         return System.getProperty("java.specification.name");
     }
-    public static String getJavaClassVersion(){
+
+    public static String getJavaClassVersion() {
         return System.getProperty("java.class.version");
     }
-    public static String getJavaClassPath(){
+
+    public static String getJavaClassPath() {
         return System.getProperty("java.class.path");
     }
-    public static String getJavaLibraryPath(){
+
+    public static String getJavaLibraryPath() {
         return System.getProperty("java.library.path");
     }
-    public static String getJavaIoTmpdir(){
+
+    public static String getJavaIoTmpdir() {
         return System.getProperty("java.io.tmpdir");
     }
-    public static String getJavaCompiler(){
+
+    public static String getJavaCompiler() {
         return System.getProperty("java.compiler");
     }
-    public static String getJavaExtDirs(){
+
+    public static String getJavaExtDirs() {
         return System.getProperty("java.ext.dirs");
     }
-    public static String getOsName(){
+
+    public static String getOsName() {
         return System.getProperty("os.name");
     }
-    public static String getOsArch(){
+
+    public static String getOsArch() {
         return System.getProperty("os.arch");
     }
-    public static String getOsVersion(){
+
+    public static String getOsVersion() {
         return System.getProperty("os.version");
     }
-    public static String getFileSeparator(){
+
+    public static String getFileSeparator() {
         return System.getProperty("file.separator");
     }
-    public static String getPathSeparator(){
+
+    public static String getPathSeparator() {
         return System.getProperty("path.separator");
     }
-    public static String getLineSeparator(){
+
+    public static String getLineSeparator() {
         return System.getProperty("line.separator");
     }
-    public static String getUserName(){
+
+    public static String getUserName() {
         return System.getProperty("user.name");
     }
-    public static String getUserHome(){
+
+    public static String getUserHome() {
         return System.getProperty("user.home");
     }
-    public static String getUserDir(){
+
+    public static String getUserDir() {
         return System.getProperty("user.dir");
     }
 
-    public static String getClassPath(Class claz,String findName){
+    public static String getClassPath(Class claz, String findName) {
         return claz.getClassLoader().getResource(findName).getPath();
     }
-    public static String getClassPath(String findName){
+
+    public static String getClassPath(String findName) {
         return OSInfo.class.getClassLoader().getResource(findName).getPath();
     }
 
-    public static Boolean isLinux(){
+    public static Boolean isLinux() {
         return getOsName().toLowerCase().contains("linux");
     }
 
-    public static Boolean isWindows(){
+    public static Boolean isWindows() {
         return getOsName().toLowerCase().contains("windows");
     }
 
-    public static Boolean isUnix(){
+    public static Boolean isUnix() {
         return getOsName().toLowerCase().contains("unix");
     }
 }

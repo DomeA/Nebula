@@ -27,9 +27,9 @@ public class SystemMetaServiceImpl implements SystemMetaService {
     @Override
     public Boolean addSystemMetaEntity(SystemMetaEntity systemMetaEntity) {
         SystemMetaEntity entity = systemMetaRepository.save(systemMetaEntity);
-        if(entity!=null){
+        if (entity != null) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

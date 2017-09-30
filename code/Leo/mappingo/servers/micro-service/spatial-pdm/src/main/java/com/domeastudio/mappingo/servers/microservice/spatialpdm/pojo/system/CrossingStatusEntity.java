@@ -9,8 +9,8 @@ import java.io.Serializable;
 @Table(name = "CrossingStatus", schema = "public", catalog = "postgres")
 public class CrossingStatusEntity implements Serializable {
     @Id
-    @GeneratedValue(generator="autoid")
-    @GenericGenerator(name="autoid",strategy="uuid")
+    @GeneratedValue(generator = "autoid")
+    @GenericGenerator(name = "autoid", strategy = "uuid")
     @Column(name = "id")
     private String id;
     @Column(name = "value")
