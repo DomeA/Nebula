@@ -48,7 +48,8 @@
                         <apiSource>
                             <springmvc>false</springmvc> <!-- false为JAX-RS -->
                             <locations>com.rooyeetone.rtprest.rest</locations>
-                            <schemes>http,https</schemes>
+                            <schemes>http</schemes>
+                            <!--<schemes>http,https</schemes>-->
                             <host>petstore.swagger.wordnik.com</host>
                             <basePath>/rtprest/rest</basePath>
                             <info>

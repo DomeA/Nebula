@@ -41,7 +41,7 @@ public class Swagger2 {
         return new ApiInfoBuilder()
                 .title("H2服务RESTful APIs接口文档")
                 .description("更多参见http://www.domeastudio.com")
-                .termsOfServiceUrl("http://blog.didispace.com/")
+                .termsOfServiceUrl("http://www.domeastudio.com")
                 .contact(new Contact("DomeA","http://www.domeastudio.com","domeastudio@gmail.com"))
                 .version("1.0")
                 .build();

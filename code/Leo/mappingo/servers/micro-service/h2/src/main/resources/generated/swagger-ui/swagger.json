@@ -16,5 +16,5 @@
   },
   "host" : "petstore.swagger.wordnik.com",
   "basePath" : "/rtprest/rest",
-  "schemes" : [ "http", "https" ]
+  "schemes" : [ "http" ]
 }

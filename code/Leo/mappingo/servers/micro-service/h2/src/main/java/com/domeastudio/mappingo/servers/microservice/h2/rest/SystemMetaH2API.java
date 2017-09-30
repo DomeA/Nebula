@@ -10,8 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@Api(value = "通过H2数据库，构建整个数据系统的数据结构描述",
-produces = "JSON/String",consumes = "JSON",protocols = "http协议")
+@Api(value = "通过H2数据库，构建整个数据系统的数据结构描述",protocols = "http")
 @RestController
 @RequestMapping(value = "/system")
 public class SystemMetaH2API {
@@ -21,8 +20,7 @@ public class SystemMetaH2API {
     private Message2Client message2Client;
 
     @ApiOperation(value="获取系统元数据列表", notes="",
-            httpMethod = "GET",produces = "JSON",
-            consumes = "NULL",code=200,protocols = "http协议")
+            httpMethod = "GET",code=200,protocols = "http")
     @ApiResponse(code = 200,message = "系统元数据JSONObject列表",response = Message2Client.class)
     @RequestMapping(value = "/meta/get",
             method = RequestMethod.GET,

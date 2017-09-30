@@ -20,11 +20,10 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:h2:file:/home/domea/myProject/project2017/git/Nebula/code/Leo/mappingo/dbfile/systemdb
+    url: jdbc:h2:file:/home/domea/myProject/project2017/treasure/Nebula/code/Leo/mappingo/dbfile/systemdb
     username: sa
     password: sa
     driver-class-name: org.h2.Driver
-springfox.documentation.swagger.v2.path: /api-docs
 #将不同的配置组以---分割，并通过spring.profiles定义每组的名字，方便后续引用
 ---
 spring:
