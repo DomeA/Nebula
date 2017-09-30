@@ -32,6 +32,7 @@
         <module>servers/micro-service/workflow</module>
         <module>servers/util/mp-utility</module>
         <module>website/portal</module>
+        <module>servers/micro-service/h2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
