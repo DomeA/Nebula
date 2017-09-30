@@ -34,6 +34,7 @@
         <module>website/portal</module>
         <module>servers/micro-service/h2</module>
         <module>servers/micro-service/postgresql</module>
+        <module>servers/micro-service/redis</module>
     </modules>
     <dependencyManagement>
         <dependencies>
