@@ -2,17 +2,11 @@ package com.domeastudio.mappingo.server.microservice.gisprocess.core;
 
 import com.vividsolutions.jts.geom.GeometryCollection;
 import com.vividsolutions.jts.geom.GeometryFactory;
-import org.opengis.geometry.*;
-import org.opengis.geometry.complex.Complex;
-import org.opengis.referencing.crs.CoordinateReferenceSystem;
-import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import com.vividsolutions.jts.geom.Geometry;
 
@@ -63,7 +57,12 @@ public final class Geometry2WKT {
     public String getEWKT(Geometry geometry, Integer epsg) {
         if (ValidGeometryHelper.isValidAndNotEmpty(geometry)) {
             Integer srid = (geometry.getSRID() == 0) ? epsg : geometry.getSRID();
-            return "SRID=" + srid + ";" + geometry.toText();
+            StringBuffer stringBuffer = new StringBuffer();
+            stringBuffer.append("SRID=");
+            stringBuffer.append(srid);
+            stringBuffer.append(";");
+            stringBuffer.append(geometry.toText());
+            return stringBuffer.toString();
         } else {
             logger.error("geometry is empty or invalid");
             throw new RuntimeException("geometry is empty or invalid");
@@ -78,7 +77,12 @@ public final class Geometry2WKT {
      */
     public String getEWKT(Geometry geometry) {
         if (ValidGeometryHelper.isValidAndNotEmpty(geometry)) {
-            return "SRID=" + geometry.getSRID() + ";" + geometry.toText();
+            StringBuffer stringBuffer = new StringBuffer();
+            stringBuffer.append("SRID=");
+            stringBuffer.append(geometry.getSRID());
+            stringBuffer.append(";");
+            stringBuffer.append(geometry.toText());
+            return stringBuffer.toString();
         } else {
             logger.error("geometry is empty or invalid");
             throw new RuntimeException("geometry is empty or invalid");
