@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(value = "/mongodb")
-public class DataCore {
+public class DataCoreAPI {
 
     @Autowired
     Message2Client message2Client;
