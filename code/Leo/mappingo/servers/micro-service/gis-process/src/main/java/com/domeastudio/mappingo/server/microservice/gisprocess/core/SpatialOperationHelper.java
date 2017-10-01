@@ -1,7 +1,6 @@
 package com.domeastudio.mappingo.server.microservice.gisprocess.core;
 
 import com.vividsolutions.jts.geom.*;
-import org.geotools.geometry.jts.JTSFactoryFinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
