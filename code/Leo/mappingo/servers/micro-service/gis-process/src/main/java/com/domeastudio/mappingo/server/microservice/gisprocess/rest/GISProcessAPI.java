@@ -1,6 +1,6 @@
 package com.domeastudio.mappingo.server.microservice.gisprocess.rest;
 
-import com.domeastudio.mappingo.server.microservice.gisprocess.core.Geometry2WKT;
+import com.domeastudio.mappingo.server.microservice.gisprocess.core.GeometryFormateHelper;
 import com.domeastudio.mappingo.server.microservice.gisprocess.dto.Message2Client;
 import com.domeastudio.mappingo.server.microservice.gisprocess.utils.ErrorCode;
 import com.vividsolutions.jts.geom.Geometry;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @Api()
 @RestController
 @RequestMapping
-public class GISProcessRest {
+public class GISProcessAPI {
 
     @Autowired
     private Message2Client message2Client;
@@ -29,7 +29,7 @@ public class GISProcessRest {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Message2Client geo2WKT(@RequestBody Geometry geometry) {
         try {
-            String wkt = Geometry2WKT.getInstance().getWKT(geometry);
+            String wkt = GeometryFormateHelper.getWKT(geometry);
             message2Client.setCode("200");
             message2Client.setMessage(wkt);
         }catch (RuntimeException e){
