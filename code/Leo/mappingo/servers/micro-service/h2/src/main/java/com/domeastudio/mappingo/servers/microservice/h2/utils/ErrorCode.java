@@ -12,7 +12,7 @@ public enum ErrorCode {
     dataBaseSearchFaile("3100", "数据库查询失败"),
     dataBaseAddFaile("3200", "数据库添加失败"),
     dataBaseDeleteFaile("3300", "数据库记录删除失败"),
-    dataTypeInequality("3400", "数据类型不相同"),
+    dataTypeInequality("2000", "数据类型不相同"),
     unknown("4000", "未知错误请查看后台堆栈错误");
 
     private String key;
