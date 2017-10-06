@@ -81,6 +81,7 @@ public class SystemMetaH2API {
         systemMetaEntity.setForeignKey(foreignKey);
         systemMetaEntity.setForeignKeyType(foreignKeyType);
         systemMetaEntity.setReferenceTable(referenceTable);
+        systemMetaEntity.setAlias(null);
         if (systemMetaService.addSystemMetaEntity(systemMetaEntity)) {
             message2Client.setCode("200");
             message2Client.setMessage("添加成功");

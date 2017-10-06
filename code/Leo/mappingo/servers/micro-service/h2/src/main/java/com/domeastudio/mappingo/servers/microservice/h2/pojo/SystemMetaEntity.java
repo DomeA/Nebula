@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
 @Table(schema = "PUBLIC", catalog = "systemdb", name = "system_meta")
@@ -15,6 +16,7 @@ public class SystemMetaEntity implements Serializable {
     private String referenceTable;
     private String foreignKey;
     private FieldTypeEnum foreignKeyType;
+    private String alias;
 
     @Id
     @GeneratedValue(generator = "autoid")
@@ -88,5 +90,23 @@ public class SystemMetaEntity implements Serializable {
 
     public void setForeignKeyType(FieldTypeEnum foreignKeyType) {
         this.foreignKeyType = foreignKeyType;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        if(alias==null){
+            StringBuffer stringBuffer=new StringBuffer();
+            stringBuffer.append(getTableName());
+            stringBuffer.append("_");
+            stringBuffer.append(getFieldName());
+            stringBuffer.append("_");
+            stringBuffer.append(UUID.randomUUID().toString().replace("_",""));
+            this.alias=stringBuffer.toString();
+        }else{
+            this.alias = alias;
+        }
     }
 }
