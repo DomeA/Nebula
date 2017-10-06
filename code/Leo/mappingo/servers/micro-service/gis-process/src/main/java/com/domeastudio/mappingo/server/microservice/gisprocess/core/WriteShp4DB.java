@@ -1,4 +1,4 @@
 package com.domeastudio.mappingo.server.microservice.gisprocess.core;
 
-public class WriteShp {
+public class WriteShp4DB {
 }
