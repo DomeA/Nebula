@@ -41,6 +41,7 @@
         <module>servers/micro-service/image-process</module>
         <module>servers/micro-service/hadoop</module>
         <module>servers/micro-service/email</module>
+        <module>servers/util/mp-security</module>
     </modules>
     <dependencyManagement>
         <dependencies>
