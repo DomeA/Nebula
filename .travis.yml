@@ -2,4 +2,5 @@ language: java
 jdk:
   - oraclejdk8
 sudo: enabled
+install: ./install-dependencies.sh
 xcode_project: /code/Leo/mappingo #项目文件相对于.travis.yml文件的路径
