@@ -25,6 +25,7 @@ public class Common {
     static {
         ImageIO.scanForPlugins();
     }
+
     //关于图像文件和像素--------------------------
     public int[] grabber(Image image, int width, int height) {
         int[] pixel = new int[width * height];
@@ -58,14 +59,15 @@ public class Common {
             fis = new FileImageInputStream(tifFile);
             reader.setInput(fis);
             res = new Object[]{reader, fis};
-        } catch(NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
         }
         return res;
     }
+
     //读取tiff文件到 BufferedImage
     public Image openImageAsTiff(File tifFile, long[] dpiData) {
         ImageReader reader = null;
@@ -105,6 +107,7 @@ public class Common {
         }
         return res;
     }
+
     //获取tiff dpi
     private long[] getTiffDPI(ImageReader reader, int index) {
         long[] dpi = new long[2];

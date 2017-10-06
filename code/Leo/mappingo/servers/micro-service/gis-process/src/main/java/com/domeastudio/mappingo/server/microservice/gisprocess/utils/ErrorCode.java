@@ -13,7 +13,7 @@ public enum ErrorCode {
     dataBaseAddFaile("3200", "数据库添加失败"),
     dataBaseDeleteFaile("3300", "数据库记录删除失败"),
     dataTypeInequality("3400", "数据类型不相同"),
-    conversionFaile("2000","地理数据转换失败"),
+    conversionFaile("2000", "地理数据转换失败"),
     unknown("4000", "未知错误请查看后台堆栈错误");
 
     private String key;

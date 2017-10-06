@@ -97,15 +97,15 @@ public class SystemMetaEntity implements Serializable {
     }
 
     public void setAlias(String alias) {
-        if(alias==null){
-            StringBuffer stringBuffer=new StringBuffer();
+        if (alias == null) {
+            StringBuffer stringBuffer = new StringBuffer();
             stringBuffer.append(getTableName());
             stringBuffer.append("_");
             stringBuffer.append(getFieldName());
             stringBuffer.append("_");
-            stringBuffer.append(UUID.randomUUID().toString().replace("_",""));
-            this.alias=stringBuffer.toString();
-        }else{
+            stringBuffer.append(UUID.randomUUID().toString().replace("_", ""));
+            this.alias = stringBuffer.toString();
+        } else {
             this.alias = alias;
         }
     }

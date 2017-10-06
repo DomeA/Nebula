@@ -7,6 +7,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +16,7 @@ public class DSAHelper {
 
     /**
      * 默认密钥字节数
-     *
+     * <p>
      * <pre>
      * DSA
      * Default Keysize 1024
@@ -35,15 +36,12 @@ public class DSAHelper {
     /**
      * 用私钥对信息生成数字签名
      *
-     * @param data
-     *            加密数据
-     * @param privateKey
-     *            私钥
-     *
+     * @param data       加密数据
+     * @param privateKey 私钥
      * @return
      * @throws Exception
      */
-    public static String sign(byte[] data, String privateKey,ALGORITHM keyAlgorithm) throws Exception {
+    public static String sign(byte[] data, String privateKey, ALGORITHM keyAlgorithm) throws Exception {
         // 解密由base64编码的私钥
         byte[] keyBytes = BASE64Helper.decryptBASE64(privateKey);
 
@@ -67,18 +65,13 @@ public class DSAHelper {
     /**
      * 校验数字签名
      *
-     * @param data
-     *            加密数据
-     * @param publicKey
-     *            公钥
-     * @param sign
-     *            数字签名
-     *
+     * @param data      加密数据
+     * @param publicKey 公钥
+     * @param sign      数字签名
      * @return 校验成功返回true 失败返回false
      * @throws Exception
-     *
      */
-    public static Boolean verify(byte[] data, String publicKey, String sign,ALGORITHM keyAlgorithm)
+    public static Boolean verify(byte[] data, String publicKey, String sign, ALGORITHM keyAlgorithm)
             throws Exception {
 
         // 解密由base64编码的公钥
@@ -104,12 +97,11 @@ public class DSAHelper {
     /**
      * 生成密钥
      *
-     * @param seed
-     *            种子
+     * @param seed 种子
      * @return 密钥对象
      * @throws Exception
      */
-    public static Map<String, Object> getKey(String seed,ALGORITHM keyAlgorithm) throws Exception {
+    public static Map<String, Object> getKey(String seed, ALGORITHM keyAlgorithm) throws Exception {
         KeyPairGenerator keygen = KeyPairGenerator.getInstance(keyAlgorithm.name());
         // 初始化随机产生器
         SecureRandom secureRandom = new SecureRandom();
@@ -135,7 +127,7 @@ public class DSAHelper {
      * @throws Exception
      */
     public static Map<String, Object> getKey(ALGORITHM keyAlgorithm) throws Exception {
-        return getKey(DEFAULT_SEED,keyAlgorithm);
+        return getKey(DEFAULT_SEED, keyAlgorithm);
     }
 
     /**
@@ -181,11 +173,11 @@ public class DSAHelper {
         System.err.println("私钥:\r" + privateKey);
 
         // 产生签名
-        String sign = DSAHelper.sign(data, privateKey,ALGORITHM.DSA);
+        String sign = DSAHelper.sign(data, privateKey, ALGORITHM.DSA);
         System.err.println("签名:\r" + sign);
 
         // 验证签名
-        boolean status = DSAHelper.verify(data, publicKey, sign,ALGORITHM.DSA);
+        boolean status = DSAHelper.verify(data, publicKey, sign, ALGORITHM.DSA);
         System.err.println("状态:\r" + status);
 
     }

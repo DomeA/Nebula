@@ -20,19 +20,20 @@ public class GISProcessAPI {
     @Autowired
     private Message2Client message2Client;
 
-    @ApiOperation(value="地理对象转换成WKT字符串", notes="",httpMethod = "POST")
-    @ApiImplicitParam(name = "geometry", value = "geometry", required = true,dataTypeClass = Geometry.class)
-    @ApiResponse(code = 200,message = "JSONObject",response = Message2Client.class)
+    @ApiOperation(value = "地理对象转换成WKT字符串", notes = "", httpMethod = "POST")
+    @ApiImplicitParam(name = "geometry", value = "geometry", required = true, dataTypeClass = Geometry.class)
+    @ApiResponse(code = 200, message = "JSONObject", response = Message2Client.class)
     @RequestMapping(value = "/geo2wkt",
             method = RequestMethod.POST,
             produces = MediaType.TEXT_PLAIN_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Message2Client geo2WKT(@RequestBody Geometry geometry) {
+    public @ResponseBody
+    Message2Client geo2WKT(@RequestBody Geometry geometry) {
         try {
             String wkt = GeometryFormateHelper.getWKT(geometry);
             message2Client.setCode("200");
             message2Client.setMessage(wkt);
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             message2Client.setCode(ErrorCode.conversionFaile.getKey());
             message2Client.setMessage(ErrorCode.conversionFaile.getValue());
         }

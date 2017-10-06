@@ -11,7 +11,7 @@ public class ValidCoordinateReferenceSystemHelper {
     private static final long serialVersionUID = 1L;
     private static Logger logger = LoggerFactory.getLogger(ValidCoordinateReferenceSystemHelper.class);
 
-    public static Boolean isValid(CoordinateReferenceSystem crs){
+    public static Boolean isValid(CoordinateReferenceSystem crs) {
         return false;
     }
 }

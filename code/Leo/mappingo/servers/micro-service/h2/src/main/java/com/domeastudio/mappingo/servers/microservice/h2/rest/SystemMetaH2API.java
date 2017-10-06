@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@Api(value = "通过H2数据库，构建整个数据系统的数据结构描述",protocols = "http")
+@Api(value = "通过H2数据库，构建整个数据系统的数据结构描述", protocols = "http")
 @RestController
 @RequestMapping(value = "/system")
 public class SystemMetaH2API {
@@ -19,9 +19,9 @@ public class SystemMetaH2API {
     @Autowired
     private Message2Client message2Client;
 
-    @ApiOperation(value="获取系统元数据列表", notes="",
-            httpMethod = "GET",code=200,protocols = "http")
-    @ApiResponse(code = 200,message = "系统元数据JSONObject列表",response = Message2Client.class)
+    @ApiOperation(value = "获取系统元数据列表", notes = "",
+            httpMethod = "GET", code = 200, protocols = "http")
+    @ApiResponse(code = 200, message = "系统元数据JSONObject列表", response = Message2Client.class)
     @RequestMapping(value = "/meta/get",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -35,9 +35,10 @@ public class SystemMetaH2API {
         }
         return message2Client;
     }
-    @ApiOperation(value="获取一个系统元数据记录", notes="根据id获取元数据记录",httpMethod = "GET")
+
+    @ApiOperation(value = "获取一个系统元数据记录", notes = "根据id获取元数据记录", httpMethod = "GET")
     @ApiImplicitParam(name = "id", value = "元数据的UUID", required = true, dataType = "String")
-    @ApiResponse(code = 200,message = "系统元数据JSONObject",response = Message2Client.class)
+    @ApiResponse(code = 200, message = "系统元数据JSONObject", response = Message2Client.class)
     @RequestMapping(value = "/meta/get/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Message2Client getSystemMetaEntity(@PathVariable("id") String id) {

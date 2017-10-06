@@ -42,7 +42,7 @@ public class Swagger2 {
                 .title("Email服务RESTful APIs接口文档")
                 .description("更多参见http://www.domeastudio.com")
                 .termsOfServiceUrl("http://www.domeastudio.com")
-                .contact(new Contact("DomeA","http://www.domeastudio.com","domeastudio@gmail.com"))
+                .contact(new Contact("DomeA", "http://www.domeastudio.com", "domeastudio@gmail.com"))
                 .version("1.0")
                 .build();
     }

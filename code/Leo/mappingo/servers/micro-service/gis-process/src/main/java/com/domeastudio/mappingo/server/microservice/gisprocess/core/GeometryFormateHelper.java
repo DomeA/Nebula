@@ -17,7 +17,7 @@ public final class GeometryFormateHelper {
     private static Logger logger = LoggerFactory.getLogger(GeometryFormateHelper.class);
 
     private static Geometry2WKT geometry2WKT = Geometry2WKT.getInstance();
-    private static WKT2Geometry wkt2Geometry=WKT2Geometry.getInstance();
+    private static WKT2Geometry wkt2Geometry = WKT2Geometry.getInstance();
 
     /**
      * 获取几何对象的WKT字符串
@@ -45,8 +45,8 @@ public final class GeometryFormateHelper {
      * @param geometry
      * @return 返回WKT字符串
      */
-    public static String getEWKT(Geometry geometry,Integer epsg) {
-        return geometry2WKT.getEWKT(geometry,epsg);
+    public static String getEWKT(Geometry geometry, Integer epsg) {
+        return geometry2WKT.getEWKT(geometry, epsg);
     }
 
     /**
@@ -71,10 +71,11 @@ public final class GeometryFormateHelper {
 
     /**
      * 拆分复杂几何对象成简单几何对象
+     *
      * @param geometry
      * @return 返回WKT字符串列表
      */
-    public List<String> geometrySplit4WKT(Geometry geometry){
+    public List<String> geometrySplit4WKT(Geometry geometry) {
         return geometry2WKT.geometrySplit4WKT(geometry);
     }
 
@@ -84,25 +85,26 @@ public final class GeometryFormateHelper {
      * @param geometry
      * @return 返回WKT字符串列表
      */
-    public static List<String> geometrySplit(Geometry geometry,Integer epsg) {
-        return geometry2WKT.geometrySplit(geometry,epsg);
+    public static List<String> geometrySplit(Geometry geometry, Integer epsg) {
+        return geometry2WKT.geometrySplit(geometry, epsg);
     }
 
     public static Geometry getGeometry(String wkt) throws ParseException {
         return wkt2Geometry.getGeometry(wkt);
     }
 
-    public static Geometry getGeometry(String wkt,Integer epsg) throws ParseException {
-        return wkt2Geometry.getGeometry(wkt,epsg);
+    public static Geometry getGeometry(String wkt, Integer epsg) throws ParseException {
+        return wkt2Geometry.getGeometry(wkt, epsg);
     }
 
     public static Geometry getGeometryExt(String ewkt) throws ParseException {
-        return  wkt2Geometry.getGeometryExt(ewkt);
+        return wkt2Geometry.getGeometryExt(ewkt);
     }
 
-    public static LinearRing getLinearRing(Coordinate[] coordinates){
+    public static LinearRing getLinearRing(Coordinate[] coordinates) {
         return wkt2Geometry.getLinearRing(coordinates);
     }
+
     /**
      * 合并多个几何对象成一个几何集合
      *
