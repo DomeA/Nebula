@@ -6,3 +6,4 @@ sudo: enabled
 cache:
   - bundler
   - cocoapods
+xcode_project: /code/Leo/mappingo #项目文件相对于.travis.yml文件的路径
