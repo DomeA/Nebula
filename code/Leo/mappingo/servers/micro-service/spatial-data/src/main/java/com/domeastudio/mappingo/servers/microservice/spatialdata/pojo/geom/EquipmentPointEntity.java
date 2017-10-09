@@ -12,11 +12,11 @@ import java.util.UUID;
 public class EquipmentPointEntity {
     private Long id;
     private String fid;
-    @Type(type="org.hibernate.spatial.GeometryType")
+    @Type(type = "org.hibernate.spatial.GeometryType")
     private Point location;
 
-    public EquipmentPointEntity(){
-        this.setFid(UUID.randomUUID().toString().replace("-",""));
+    public EquipmentPointEntity() {
+        this.setFid(UUID.randomUUID().toString().replace("-", ""));
     }
 
     @Id

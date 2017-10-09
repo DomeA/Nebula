@@ -9,8 +9,8 @@ import java.io.Serializable;
 @Table(name = "CrackType", schema = "public", catalog = "postgres")
 public class CrackTypeEntity implements Serializable {
     @Id
-    @GeneratedValue(generator="autoid")
-    @GenericGenerator(name="autoid",strategy="uuid")
+    @GeneratedValue(generator = "autoid")
+    @GenericGenerator(name = "autoid", strategy = "uuid")
     @Column(name = "id")
     private String id;
     @Column(name = "value")

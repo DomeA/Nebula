@@ -9,13 +9,13 @@ define({
         "jquery": './libs/jquery/jquery',
         "bootstrap": './libs/bootstrap/bootstrap',
         'domReady': './libs/domReady/domReady',
-        'vue':'./libs/vue/dist/vue',
-        'vue-router':'./libs/vue-router/vue-router'
+        'vue': './libs/vue/dist/vue',
+        'vue-router': './libs/vue-router/vue-router'
     },
     map: {
         '*': {
             'css': './libs/require-css/css',
-            'less':'./libs/require-less/less'
+            'less': './libs/require-less/less'
         }
     },
     shim: {
@@ -26,8 +26,8 @@ define({
                 'css!./libs/bootstrap/bootstrap-theme'
             ]
         },
-        'vue-router':{
-            deps:[
+        'vue-router': {
+            deps: [
                 'vue'
             ]
         }

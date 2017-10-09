@@ -12,7 +12,8 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(value = "/mongodb")
-public class DataCore {
+public class DataCoreAPI {
+
     @Autowired
     Message2Client message2Client;
 
@@ -30,27 +31,28 @@ public class DataCore {
         process.waitFor();
         int i = process.exitValue();
         if (i == 0) {
-            System.out.println("执行完成.") ;
+            System.out.println("执行完成.");
             message2Client.setCode(ErrorCode.dataBaseStartSuccess.getKey());
             message2Client.setMessage(ErrorCode.dataBaseStartSuccess.getValue());
         } else {
-            System.out.println("执行失败.") ;
+            System.out.println("执行失败.");
             message2Client.setCode(ErrorCode.dataBaseStartFaile.getKey());
             message2Client.setMessage(ErrorCode.dataBaseStartFaile.getValue());
         }
         return message2Client;
     }
+
     @RequestMapping(value = "/start",
             method = RequestMethod.GET)
     public Message2Client startMongosServer() throws InterruptedException {
-        if(OSInfo.isWindows()){
+        if (OSInfo.isWindows()) {
             return run("");
-        }else if(OSInfo.isLinux()){
-            String path=OSInfo.getClassPath("mongodbStart.sh");
-            return run("/bin/sh "+path);
-        }else if(OSInfo.isUnix()){
+        } else if (OSInfo.isLinux()) {
+            String path = OSInfo.getClassPath("mongodbStart.sh");
+            return run("/bin/sh " + path);
+        } else if (OSInfo.isUnix()) {
             return run("");
-        }else{
+        } else {
             message2Client.setCode(ErrorCode.unknown.getKey());
             message2Client.setMessage(ErrorCode.unknown.getValue());
             return message2Client;
@@ -59,15 +61,13 @@ public class DataCore {
 
     @RequestMapping(value = "/restart",
             method = RequestMethod.GET)
-    public String restartMongosServer(){
-
+    public String restartMongosServer() {
         return null;
     }
 
     @RequestMapping(value = "/stop",
             method = RequestMethod.GET)
-    public Message2Client stopMongosServer(){
-
+    public Message2Client stopMongosServer() {
         return null;
     }
 
@@ -75,7 +75,7 @@ public class DataCore {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Message2Client addData(@PathVariable("json") String json){
+    public Message2Client addData(@PathVariable("json") String json) {
         return null;
     }
 
@@ -83,7 +83,8 @@ public class DataCore {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.TEXT_PLAIN_VALUE)
-    public @ResponseBody Message2Client getData(@PathVariable("id") String id){
+    public @ResponseBody
+    Message2Client getData(@PathVariable("id") String id) {
         return null;
     }
 
@@ -91,7 +92,8 @@ public class DataCore {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody String getAllData(){
+    public @ResponseBody
+    String getAllData() {
         return null;
     }
 
@@ -99,7 +101,7 @@ public class DataCore {
             method = RequestMethod.PUT,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Message2Client updateData(@PathVariable("json") String json){
+    public Message2Client updateData(@PathVariable("json") String json) {
         return null;
     }
 
@@ -107,7 +109,7 @@ public class DataCore {
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.TEXT_PLAIN_VALUE)
-    public Message2Client deleteData(@PathVariable("id") String id){
+    public Message2Client deleteData(@PathVariable("id") String id) {
         return null;
     }
 }

@@ -18,8 +18,8 @@ public class DentTypeEntity implements Serializable {
     private FeatureTypeEntity featureTypeEntityById;
 
     @Id
-    @GeneratedValue(generator="autoid")
-    @GenericGenerator(name="autoid",strategy="uuid")
+    @GeneratedValue(generator = "autoid")
+    @GenericGenerator(name = "autoid", strategy = "uuid")
     @Column(name = "id")
     public String getId() {
         return id;
@@ -28,6 +28,7 @@ public class DentTypeEntity implements Serializable {
     public void setId(String id) {
         this.id = id;
     }
+
     @Basic
     @Column(name = "value")
     public Integer getValue() {
@@ -37,6 +38,7 @@ public class DentTypeEntity implements Serializable {
     public void setValue(Integer value) {
         this.value = value;
     }
+
     @Basic
     @Column(name = "name")
     public String getName() {

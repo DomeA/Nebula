@@ -19,67 +19,73 @@ public final class CoordinateTransformationHelper {
     private static final long serialVersionUID = 1L;
     private static Logger logger = LoggerFactory.getLogger(CoordinateTransformationHelper.class);
 
-    public static Geometry transform(Geometry geometry, CoordinateReferenceSystem sourceCRS,CoordinateReferenceSystem targetCRS) throws FactoryException, TransformException {
-        MathTransform mathTransform= CRS.findMathTransform(sourceCRS,targetCRS);
-        Geometry targetGeometry=JTS.transform(geometry,mathTransform);
-        if(ValidGeometryHelper.isValidAndNotEmpty(targetGeometry)) {
+    public static Geometry transform(Geometry geometry, CoordinateReferenceSystem sourceCRS, CoordinateReferenceSystem targetCRS) throws FactoryException, TransformException {
+        MathTransform mathTransform = CRS.findMathTransform(sourceCRS, targetCRS);
+        Geometry targetGeometry = JTS.transform(geometry, mathTransform);
+        if (ValidGeometryHelper.isValidAndNotEmpty(targetGeometry)) {
             return targetGeometry;
-        }else{
+        } else {
             logger.error("transformed geometry is empty or invalid");
             throw new RuntimeException("transformed geometry is empty or invalid");
         }
     }
 
-    public static Geometry transform(Geometry geometry, String sourceWKT,String targetWKT) throws FactoryException, TransformException {
-        CoordinateReferenceSystem sourceCRS=CRS.parseWKT(sourceWKT);
-        CoordinateReferenceSystem targetCRS=CRS.parseWKT(targetWKT);
-        MathTransform mathTransform= CRS.findMathTransform(sourceCRS,targetCRS);
-        Geometry targetGeometry=JTS.transform(geometry,mathTransform);
-        if(ValidGeometryHelper.isValidAndNotEmpty(targetGeometry)) {
+    public static Geometry transform(Geometry geometry, String sourceWKT, String targetWKT) throws FactoryException, TransformException {
+        CoordinateReferenceSystem sourceCRS = CRS.parseWKT(sourceWKT);
+        CoordinateReferenceSystem targetCRS = CRS.parseWKT(targetWKT);
+        MathTransform mathTransform = CRS.findMathTransform(sourceCRS, targetCRS);
+        Geometry targetGeometry = JTS.transform(geometry, mathTransform);
+        if (ValidGeometryHelper.isValidAndNotEmpty(targetGeometry)) {
             return targetGeometry;
-        }else{
+        } else {
             logger.error("transformed geometry is empty or invalid");
             throw new RuntimeException("transformed geometry is empty or invalid");
         }
     }
 
-    public static Geometry transform(Geometry geometry, Integer sourceEPSG,Integer targetEPSG) throws FactoryException, TransformException {
-        CoordinateReferenceSystem sourceCRS=CRS.decode("EPSG:"+sourceEPSG);
-        CoordinateReferenceSystem targetCRS=CRS.decode("EPSG:"+targetEPSG);
-        MathTransform mathTransform= CRS.findMathTransform(sourceCRS,targetCRS);
-        Geometry targetGeometry=JTS.transform(geometry,mathTransform);
-        if(ValidGeometryHelper.isValidAndNotEmpty(targetGeometry)) {
+    public static Geometry transform(Geometry geometry, Integer sourceEPSG, Integer targetEPSG) throws FactoryException, TransformException {
+        CoordinateReferenceSystem sourceCRS = CRS.decode("EPSG:" + sourceEPSG);
+        CoordinateReferenceSystem targetCRS = CRS.decode("EPSG:" + targetEPSG);
+        MathTransform mathTransform = CRS.findMathTransform(sourceCRS, targetCRS);
+        Geometry targetGeometry = JTS.transform(geometry, mathTransform);
+        if (ValidGeometryHelper.isValidAndNotEmpty(targetGeometry)) {
             return targetGeometry;
-        }else{
+        } else {
             logger.error("transformed geometry is empty or invalid");
             throw new RuntimeException("transformed geometry is empty or invalid");
         }
     }
-    public static String getWKT(CoordinateReferenceSystem crs){
+
+    public static String getWKT(CoordinateReferenceSystem crs) {
         return crs.toWKT();
     }
+
     public static String getWKT(Integer epsg) throws FactoryException {
-        CoordinateReferenceSystem crs=CRS.decode("EPSG:"+epsg);
+        CoordinateReferenceSystem crs = CRS.decode("EPSG:" + epsg);
         return crs.toWKT();
     }
-    public static String getName(CoordinateReferenceSystem crs){
+
+    public static String getName(CoordinateReferenceSystem crs) {
         return crs.getName().toString();
     }
+
     public static String getName(Integer epsg) throws FactoryException {
-        CoordinateReferenceSystem crs=CRS.decode("EPSG:"+epsg);
+        CoordinateReferenceSystem crs = CRS.decode("EPSG:" + epsg);
         return crs.getName().toString();
     }
-    public static String getEPSG(CoordinateReferenceSystem crs){
-        if(crs.getIdentifiers().size()>0) {
+
+    public static String getEPSG(CoordinateReferenceSystem crs) {
+        if (crs.getIdentifiers().size() > 0) {
             Object[] objects = crs.getIdentifiers().toArray();
             return ((ReferenceIdentifier) objects[0]).toString();
-        }else{
+        } else {
             logger.error("this coordinate system has no epsg code.");
             throw new RuntimeException("this coordinate system has no epsg code.");
         }
     }
+
     public static String getEPSG(String wkt) throws FactoryException {
-        CoordinateReferenceSystem crs=CRS.parseWKT(wkt);
+        CoordinateReferenceSystem crs = CRS.parseWKT(wkt);
         return getEPSG(crs);
     }
 

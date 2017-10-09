@@ -58,20 +58,20 @@
             <version>${geotools.version}</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.geotools</groupId>-->
-            <!--<artifactId>gt-jp2k</artifactId>-->
-            <!--<version>${geotools.version}</version>-->
+        <!--<groupId>org.geotools</groupId>-->
+        <!--<artifactId>gt-jp2k</artifactId>-->
+        <!--<version>${geotools.version}</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.geotools</groupId>-->
-            <!--<artifactId>gt-netcdf</artifactId>-->
-            <!--<version>${geotools.version}</version>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.slf4j</groupId>-->
-                    <!--<artifactId>log4j-over-slf4j</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
+        <!--<groupId>org.geotools</groupId>-->
+        <!--<artifactId>gt-netcdf</artifactId>-->
+        <!--<version>${geotools.version}</version>-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>log4j-over-slf4j</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.geotools</groupId>
@@ -214,9 +214,9 @@
             <version>${geotools.version}</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.geotools.jdbc</groupId>-->
-            <!--<artifactId>gt-jdbc-h2</artifactId>-->
-            <!--<version>${geotools.version}</version>-->
+        <!--<groupId>org.geotools.jdbc</groupId>-->
+        <!--<artifactId>gt-jdbc-h2</artifactId>-->
+        <!--<version>${geotools.version}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.geotools.jdbc</groupId>
@@ -244,9 +244,9 @@
             <version>${geotools.version}</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.geotools</groupId>-->
-            <!--<artifactId>gt-wfs</artifactId>-->
-            <!--<version>${geotools.version}</version>-->
+        <!--<groupId>org.geotools</groupId>-->
+        <!--<artifactId>gt-wfs</artifactId>-->
+        <!--<version>${geotools.version}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.geotools</groupId>
@@ -289,10 +289,67 @@
             <artifactId>gt-swing</artifactId>
             <version>${geotools.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>gis-process</finalName>
         <plugins>
+            <plugin>
+                <groupId>com.github.kongchen</groupId>
+                <artifactId>swagger-maven-plugin</artifactId>
+                <version>3.1.5</version>
+                <configuration>
+                    <apiSources>
+                        <apiSource>
+                            <springmvc>false</springmvc> <!-- false为JAX-RS -->
+                            <locations>com.rooyeetone.rtprest.rest</locations>
+                            <schemes>http</schemes>
+                            <!--<schemes>http,https</schemes>-->
+                            <host>petstore.swagger.wordnik.com</host>
+                            <basePath>/rtprest/rest</basePath>
+                            <info>
+                                <title>RTP REST APIs</title>
+                                <version>v1</version>
+                                <description>This is a sample for swagger-maven-plugin</description>
+                                <contact>
+                                    <email>domeastudio@gmail.com</email>
+                                    <name>DomeA</name>
+                                    <url>http://www.domeastudio.com</url>
+                                </contact>
+                                <license>
+                                    <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+                                    <name>Apache 2.0</name>
+                                </license>
+                            </info>
+                            <templatePath>${basedir}/src/main/resources/templates/strapdown.html.hbs</templatePath>
+                            <outputPath>${basedir}/src/main/resources/generated/document.html</outputPath>
+                            <swaggerDirectory>${basedir}/src/main/resources/generated/swagger-ui</swaggerDirectory>
+                            <!--<attachSwaggerArtifact>true</attachSwaggerArtifact> -->
+                            <!--<jsonExampleValues>true</jsonExampleValues> -->
+                        </apiSource>
+                    </apiSources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

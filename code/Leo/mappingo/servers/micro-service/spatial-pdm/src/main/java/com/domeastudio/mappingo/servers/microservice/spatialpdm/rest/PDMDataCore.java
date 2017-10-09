@@ -17,32 +17,36 @@ public class PDMDataCore {
     DataDictionary dataDictionary;
     @Autowired
     ActivityTypeRepository activityTypeRepository;
-    @RequestMapping(value = "/databaseinit",method = RequestMethod.GET)
-    public void dataBaseInit(){
+
+    @RequestMapping(value = "/databaseinit", method = RequestMethod.GET)
+    public void dataBaseInit() {
         dataDictionary.dictionaryInitialization();
     }
-    @RequestMapping(value = "/activityType/{value}",method = RequestMethod.GET)
-    public @ResponseBody List<ActivityTypeEntity> getActivityType(@PathVariable("value")String value){
-        List<ActivityTypeEntity> activityTypeEntityList=new ArrayList<ActivityTypeEntity>();
+
+    @RequestMapping(value = "/activityType/{value}", method = RequestMethod.GET)
+    public @ResponseBody
+    List<ActivityTypeEntity> getActivityType(@PathVariable("value") String value) {
+        List<ActivityTypeEntity> activityTypeEntityList = new ArrayList<ActivityTypeEntity>();
         Iterator<ActivityTypeEntity> iterator = activityTypeRepository.findAll().iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             activityTypeEntityList.add(iterator.next());
         }
-        if("all".equals(value.toLowerCase())){
+        if ("all".equals(value.toLowerCase())) {
             return activityTypeEntityList;
-        }else{
-            List<ActivityTypeEntity> activityTypeEntityList1=new ArrayList<ActivityTypeEntity>();
-            for(int i=0;i<activityTypeEntityList.size();i++){
-                if(activityTypeEntityList.get(i).getValue().equals(Integer.parseInt(value))){
+        } else {
+            List<ActivityTypeEntity> activityTypeEntityList1 = new ArrayList<ActivityTypeEntity>();
+            for (int i = 0; i < activityTypeEntityList.size(); i++) {
+                if (activityTypeEntityList.get(i).getValue().equals(Integer.parseInt(value))) {
                     activityTypeEntityList1.add(activityTypeEntityList.get(i));
                 }
             }
             return activityTypeEntityList1;
         }
     }
-    @RequestMapping(value = "/activityType/{value}/{name}",method = RequestMethod.GET)
-    public void addActivityType(@PathVariable("value")Integer value,@PathVariable("name")String name){
-        ActivityTypeEntity activityTypeEntity=new ActivityTypeEntity();
+
+    @RequestMapping(value = "/activityType/{value}/{name}", method = RequestMethod.GET)
+    public void addActivityType(@PathVariable("value") Integer value, @PathVariable("name") String name) {
+        ActivityTypeEntity activityTypeEntity = new ActivityTypeEntity();
         activityTypeEntity.setName(name);
         activityTypeEntity.setValue(value);
         activityTypeRepository.save(activityTypeEntity);

@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
-@RequestMapping(value="/spatialdata")
+@RequestMapping(value = "/spatialdata")
 public class DataCore {
     @Autowired
     DataService dataService;
 
-    @RequestMapping(value="/add/point/{x}/{y}",method = RequestMethod.GET)
+    @RequestMapping(value = "/add/point/{x}/{y}", method = RequestMethod.GET)
     public void addPoint(@PathVariable("x") String x,
-                        @PathVariable("y") String y){
-        Date date=new Date();
-        for(int i=0;i<10000;i++) {
+                         @PathVariable("y") String y) {
+        Date date = new Date();
+        for (int i = 0; i < 10000; i++) {
             dataService.addEquipment(x, y);
         }
-        Date date1=new Date();
-        Long d=(date1.getTime()-date.getTime())/60000;
+        Date date1 = new Date();
+        Long d = (date1.getTime() - date.getTime()) / 60000;
         System.out.println(d);
     }
 

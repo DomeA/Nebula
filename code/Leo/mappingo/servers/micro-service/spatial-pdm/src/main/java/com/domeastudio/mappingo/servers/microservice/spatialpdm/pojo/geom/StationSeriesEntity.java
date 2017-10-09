@@ -10,7 +10,7 @@ import java.util.Date;
 public class StationSeriesEntity {
     private Long fid;
     private String eventId;
-    @Type(type="org.hibernate.spatial.GeometryType")
+    @Type(type = "org.hibernate.spatial.GeometryType")
     private Point point;
     private Date effectivefromDate;
     private Date effectiveToDate;

@@ -20,16 +20,16 @@ public class DataServiceImpl implements DataService {
 
     @Override
     public void addEquipment(String x, String y) {
-        EquipmentPointEntity equipmentPointEntity=new EquipmentPointEntity();
-        Point point=(Point) wktToGeometry("POINT ("+x+" "+y+")");
+        EquipmentPointEntity equipmentPointEntity = new EquipmentPointEntity();
+        Point point = (Point) wktToGeometry("POINT (" + x + " " + y + ")");
         equipmentPointEntity.setLocation(point);
         equipmentRepository.save(equipmentPointEntity);
     }
 
     @Override
     public void addEquipment(String wkt) {
-        EquipmentPointEntity equipmentPointEntity=new EquipmentPointEntity();
-        Point point=(Point) wktToGeometry(wkt);
+        EquipmentPointEntity equipmentPointEntity = new EquipmentPointEntity();
+        Point point = (Point) wktToGeometry(wkt);
         equipmentPointEntity.setLocation(point);
         equipmentRepository.save(equipmentPointEntity);
     }
