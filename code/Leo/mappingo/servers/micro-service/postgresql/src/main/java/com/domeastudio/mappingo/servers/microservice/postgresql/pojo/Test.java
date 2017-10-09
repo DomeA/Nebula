@@ -1,9 +1,14 @@
 package com.domeastudio.mappingo.servers.microservice.postgresql.pojo;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
+@ConfigurationProperties(prefix = "postgresql")
 public class Test  implements Serializable {
-    private String name;
+    private String sqlString;
     private  int id;
     private  String key;
 

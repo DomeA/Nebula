@@ -26,6 +26,10 @@ spring:
     password: domea
     driver-class-name: org.postgresql.Driver
 
+
+postgresql:
+   sqlString: XXXX
+   sqlString2: XXX
 #将不同的配置组以---分割，并通过spring.profiles定义每组的名字，方便后续引用
 ---
 spring:
