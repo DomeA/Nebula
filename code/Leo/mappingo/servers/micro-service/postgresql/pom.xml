@@ -26,6 +26,11 @@
             <artifactId>postgresql</artifactId>
             <version>9.4-1206-jdbc42</version>
         </dependency>
+        <dependency>
+            <groupId>com.domeastudio</groupId>
+            <artifactId>spatial-pdm</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -23,7 +23,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgisdb?searchpath=public
     username: postgres
-    password: 123456
+    password: domea
     driver-class-name: org.postgresql.Driver
 
 #将不同的配置组以---分割，并通过spring.profiles定义每组的名字，方便后续引用
@@ -31,7 +31,7 @@ spring:
 spring:
   profiles: testProfile
 config:
-  profile: test
+  profile: TestImpl
 
 ---
 spring:
