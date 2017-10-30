@@ -35,7 +35,7 @@ postgresql:
 spring:
   profiles: testProfile
 config:
-  profile: TestImpl
+  profile: CreateDbImpl
 
 ---
 spring:
